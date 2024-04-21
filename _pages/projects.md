@@ -3,7 +3,7 @@ layout: page
 title: projects
 permalink: /projects/
 description: A growing collection of your cool projects.
-nav: true
+nav: false
 nav_order: 1
 display_categories: [work]
 horizontal: false
@@ -20,7 +20,7 @@ horizontal: false
   {% assign categorized_projects = site.projects | where: "category", category %}
   {% assign sorted_projects = categorized_projects | sort: "importance" %}
   <!-- Generate cards for each project -->
-  <!--{% if page.horizontal %}
+  {% if page.horizontal %}
   <div class="container">
     <div class="row row-cols-2">
     {% for project in sorted_projects %}
@@ -28,14 +28,14 @@ horizontal: false
     {% endfor %}
     </div>
   </div>
-  {% else %}-->
+  {% else %}
   <div class="grid">
     {% for project in sorted_projects %}
       {% include projects.liquid %}
     {% endfor %}
   </div>
-  <!--{% endif %}
-  {% endfor %}-->
+  {% endif %}
+  {% endfor %}
 
 {% else %}
 
