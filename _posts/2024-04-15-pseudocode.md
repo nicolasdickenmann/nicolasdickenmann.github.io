@@ -1,5 +1,5 @@
 ---
-layout: 
+layout: post
 title: March 2024 Jane Street Puzzle solved
 date: 2024-04-15 00:01:00
 description: 
