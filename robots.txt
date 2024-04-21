@@ -1,4 +1,4 @@
 User-agent: *
 Disallow:
 
-Sitemap: https://nicolasdickenmann.github.io/al-folio/sitemap.xml
+Sitemap: https://nicolasdickenmann.github.io/sitemap.xml
