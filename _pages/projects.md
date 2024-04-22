@@ -20,7 +20,7 @@ title: projects
       <div class="project-box">
         <h3 class="project-title">{{ project.title }}</h3>
         {% if project.image %}
-          <img class="project-image" src="{{ project.image | relative_url }}" alt="{{ project.title }}" style="max-width: 90%; height: auto; margin: 0 auto;">
+          <img class="project-image" src="{{ project.image | relative_url }}" alt="{{ project.title }}" style="max-width: 90%; height: auto; margin: 0 auto;border-radius: 12px;">
         {% endif %}
         <ul class="project-details">
           {% for detail in project.details %}
