@@ -43,18 +43,18 @@ title: projects
     gap: 20px;
   }
   .project-box {
-    border: 1px solid #121481;
+    border: 1px solid #AE75F9;
     padding: 20px;
     border-radius: 8px;
-    background-color: #121481;
+    background-color: #AE75F9;
   }
   .project-title {
     margin-bottom: 15px;
   }
   .project-details {
     list-style: none;
-    padding: 20;
-    text-align: center;
+    padding: 25;
+    text-align: left;
   }
   .project-details li {
     margin-bottom: 5px;
