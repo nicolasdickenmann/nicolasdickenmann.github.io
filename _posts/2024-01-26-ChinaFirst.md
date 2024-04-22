@@ -1,68 +1,14 @@
 ---
 layout: post
-title: a post with echarts
-date: 2024-01-26 16:03:00
-description: this is what included echarts code could look like
-tags: formatting charts
-categories: sample-posts
-chart:
-  echarts: true
+title: "Nominated Thesis"
+date: 2024-04-17
+category: project
+redirect: https://sjf.ch/china-first-chinas-entwicklung-zum-global-groessten-eisenbahnhersteller-und-reaktionen-der-westlichen-welt/
+details:
+  - "•	School’s best high school thesis “China First! China’s Remarkable Progress Toward Becoming the Global Leader in Railway Manufacturing”"
+  - "•	Price in the national competition by from <a href='https://sjf.ch/china-first-chinas-entwicklung-zum-global-groessten-eisenbahnhersteller-und-reaktionen-der-westlichen-welt/'>Schweizer Jugend Forsch</a>"
+  - "•	Third Place at the <a href='https://schw-stv.ch/blog/2021/11/17/2-future-skills-forum-rheinfelden-2021-ist-erfolg-lernbar/#next'>2. Future Skills Forum Rheinfelden</a>"
+  - "•	Provincial Level Price of <a href='https://maturitaetsarbeiten.ch/cms/archiv/suche-nach-schule.html?view=article&id=113&catid=10'>Kanton Zurich</a>"
+
+featured: true
 ---
-
-This is an example post with some [echarts](https://echarts.apache.org/) code.
-
-````markdown
-```echarts
-{
-  "title": {
-    "text": "ECharts Getting Started Example"
-  },
-  "responsive": true,
-  "tooltip": {},
-  "legend": {
-    "top": "30px",
-    "data": ["sales"]
-  },
-  "xAxis": {
-    "data": ["Shirts", "Cardigans", "Chiffons", "Pants", "Heels", "Socks"]
-  },
-  "yAxis": {},
-  "series": [
-    {
-      "name": "sales",
-      "type": "bar",
-      "data": [5, 20, 36, 10, 10, 20]
-    }
-  ]
-}
-```
-````
-
-Which generates:
-
-```echarts
-{
-  "title": {
-    "text": "ECharts Getting Started Example"
-  },
-  "responsive": true,
-  "tooltip": {},
-  "legend": {
-    "top": "30px",
-    "data": ["sales"]
-  },
-  "xAxis": {
-    "data": ["Shirts", "Cardigans", "Chiffons", "Pants", "Heels", "Socks"]
-  },
-  "yAxis": {},
-  "series": [
-    {
-      "name": "sales",
-      "type": "bar",
-      "data": [5, 20, 36, 10, 10, 20]
-    }
-  ]
-}
-```
-
-Note that this library offer support for both light and dark themes. You can switch between them using the theme switcher in the top right corner of the page.
