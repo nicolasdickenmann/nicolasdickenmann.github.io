@@ -1,6 +1,7 @@
 ---
 layout: default
 permalink: /projects/
+nav: true
 title: Projects
 ---
 
