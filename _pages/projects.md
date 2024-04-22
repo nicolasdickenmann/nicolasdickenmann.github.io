@@ -59,10 +59,26 @@ title: projects
   .project-title {
     margin-bottom: 15px;
   }
+  .project-title a {
+    color: inherit; /* This makes the link color the same as the surrounding text */
+    text-decoration: none; /* This removes the underline from the link */
+  }
+  .project-title a:hover {
+    color: #0096D6; /* This changes the link color on hover */
+    text-decoration: underline; /* This adds an underline on hover */
+  }
   .project-details {
     list-style: none;
     text-align: left;
     margin-top: 20px;
+  }
+  .project-details a {
+  color: inherit; /* This makes the link color the same as the surrounding text */
+  text-decoration: none; /* This removes the underline from the link */
+  }
+  .project-details a:hover {
+  color: #0096D6; /* This changes the link color on hover */
+  text-decoration: underline; /* This adds an underline on hover */
   }
   .project-details li {
     margin-bottom: 5px;
