@@ -59,11 +59,11 @@ title: projects
   .project-title {
     margin-bottom: 15px;
   }
-  .project-title a {
+  .project-title  {
     color: inherit; /* This makes the link color the same as the surrounding text */
     text-decoration: none; /* This removes the underline from the link */
   }
-  .project-title a:hover {
+  .project-title:hover {
     color: #0096D6; /* This changes the link color on hover */
     text-decoration: underline; /* This adds an underline on hover */
   }
