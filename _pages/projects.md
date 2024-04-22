@@ -31,7 +31,7 @@ title: projects
   .projects-container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 20px;
+    padding: 50px;
   }
   .projects-grid {
     display: grid;
@@ -41,7 +41,7 @@ title: projects
   .project-box {
     border: 1px solid #ccc;
     padding: 10px;
-    border-radius: 5px;
+    border-radius: 8px;
     background-color: #f9f9f9;
   }
   .project-title {
@@ -50,7 +50,7 @@ title: projects
   .project-details {
     list-style: none;
     padding: 0;
-    text-align: left;
+    text-align: center;
   }
   .project-details li {
     margin-bottom: 5px;
