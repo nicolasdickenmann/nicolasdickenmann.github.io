@@ -42,7 +42,7 @@ title: projects
     border: 1px solid #ccc;
     padding: 20px;
     border-radius: 8px;
-    background-color: #874CCC;
+    background-color: #f9f9f9;
   }
   .project-title {
     margin-bottom: 15px;
