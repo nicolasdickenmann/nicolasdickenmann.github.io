@@ -1,12 +1,11 @@
 ---
 layout: redirect
 permalink: /cv/
-title: resume
+title: Resume
 nav: true
-redirect: /assets/pdf/example_pdf.pdf
+redirect: /cv.html
 nav_order: 5
-cv_pdf: example_pdf.pdf
-description: This is a description of the page. You can modify it in '_pages/cv.md'. You can also change or remove the top pdf download button.
+description: This is a description of the page. You can modify it in '_pages/cv.md'.
 toc:
   sidebar: left
 ---
