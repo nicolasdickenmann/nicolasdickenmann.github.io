@@ -11,6 +11,10 @@ title: projects
   <h2 class="projects-subtitle">A growing collection of cool projects</h2>
 
   {% assign projects = site.posts | where: "category", "project" %}
+  {% for project in projects %}
+  <!-- Debug: Output the title of each project -->
+  {{ project.title }}
+  {% endfor %}
   <div class="projects-grid">
     {% for project in projects %}
       <div class="project-box">
@@ -42,7 +46,7 @@ title: projects
     border: 1px solid #ccc;
     padding: 20px;
     border-radius: 8px;
-    background-color: #f9f9f9;
+    background-color: #874CCC;
   }
   .project-title {
     margin-bottom: 15px;
