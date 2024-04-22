@@ -2,7 +2,7 @@
 layout: default
 permalink: /projects/
 nav: true
-title: Projects
+title: projects
 ---
 
 <div class="projects-container" style="text-align: center;">

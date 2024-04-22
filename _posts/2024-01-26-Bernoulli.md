@@ -2,7 +2,7 @@
 layout: post
 title: "Amazing Robotics Project 2"
 date: 2024-04-23
-category: proj
+category: project
 image: /assets/img/hooks-10.png
 details:
   - "Autonomous navigation"
