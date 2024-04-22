@@ -43,10 +43,10 @@ title: projects
     gap: 20px;
   }
   .project-box {
-    border: 1px solid #ccc;
+    border: 1px solid #121481;
     padding: 20px;
     border-radius: 8px;
-    background-color: #874CCC;
+    background-color: #121481;
   }
   .project-title {
     margin-bottom: 15px;
