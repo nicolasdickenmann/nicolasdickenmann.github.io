@@ -1,9 +1,9 @@
 ---
 layout: post
-title: "Amazing Robotics Project 2"
+title: "Bmazing Robotics Project 2"
 date: 2024-04-23
 category: project
-image: /assets/img/9.JPG
+image: /assets/img/9.jpg
 details:
   - "Autonomous navigation"
   - "Real-time object recognition"
