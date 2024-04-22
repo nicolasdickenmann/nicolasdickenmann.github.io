@@ -20,7 +20,7 @@ title: projects
       <div class="project-box">
         <h3 class="project-title">{{ project.title }}</h3>
         {% if project.image %}
-          <img class="project-image" src="{{ project.image | relative_url }}" alt="{{ project.title }}" style="max-width: 90%; height: auto; margin: 0 auto;">
+          <img class="project-image" src="{{ project.image | relative_url }}" alt="{{ project.title }}" style="max-width: 100%; height: auto; margin: 0 auto;">
         {% endif %}
         <ul class="project-details">
           {% for detail in project.details %}
@@ -47,7 +47,7 @@ title: projects
   .project-box {
     border: 1px solid #AE75F9;
     padding: 20px;
-    border-radius: 12px;
+    border-radius: 8px;
     background-color: #AE75F9;
   }
   .project-title {
@@ -57,7 +57,6 @@ title: projects
     list-style: none;
     padding: 25;
     text-align: left;
-    margin-top: 20px;
   }
   .project-details li {
     margin-bottom: 5px;
