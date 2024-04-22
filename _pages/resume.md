@@ -1,7 +1,7 @@
 ---
-layout: redirect
+layout: default
 permalink: /cv/
-title: Resume
+title: resume
 nav: true
 redirect: /cv.html
 nav_order: 5
