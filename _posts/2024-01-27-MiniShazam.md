@@ -3,6 +3,7 @@ layout: post
 title: "Mini-Shazam"
 date: 2024-04-13
 category: project
+redirect: https://gitlab.ethz.ch/ndickenmann/shazam
 details:
   - "• Built a shazam"
   - "• Real-time object recognition"
