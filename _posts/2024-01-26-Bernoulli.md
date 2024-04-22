@@ -1,93 +1,28 @@
 ---
 layout: post
-title: a post with geojson
-date: 2024-01-26 17:57:00
-description: this is what included geojson code could look like
-tags: formatting charts maps
-categories: sample-posts
-map: true
+title: "Amazing Robotics Project 2"
+date: 2024-04-23
+category: project
+image: /assets/img/hooks-10.png
+details:
+  - "Autonomous navigation"
+  - "Real-time object recognition"
+  - "Custom-built robotic arm"
+  - "Integration with IoT devices"
+featured: true
 ---
 
-This is an example post with some [geojson](https://geojson.org/) code. The support is provided thanks to [Leaflet](https://leafletjs.com/). To create your own visualization, go to [geojson.io](https://geojson.io/).
+# Amazing Robotics Project
 
-````markdown
-```geojson
-{
-  "type": "FeatureCollection",
-  "features": [
-    {
-      "type": "Feature",
-      "properties": {},
-      "geometry": {
-        "coordinates": [
-          [
-            [
-              -60.11363029935569,
-              -2.904625022183211
-            ],
-            [
-              -60.11363029935569,
-              -3.162613728707967
-            ],
-            [
-              -59.820894493858034,
-              -3.162613728707967
-            ],
-            [
-              -59.820894493858034,
-              -2.904625022183211
-            ],
-            [
-              -60.11363029935569,
-              -2.904625022183211
-            ]
-          ]
-        ],
-        "type": "Polygon"
-      }
-    }
-  ]
-}
-```
-````
+This project is a culmination of advanced robotics engineering and software development aimed at creating an autonomous robotic system capable of interacting with its environment in real-time.
 
-Which generates:
+!Robotics Project
 
-```geojson
-{
-  "type": "FeatureCollection",
-  "features": [
-    {
-      "type": "Feature",
-      "properties": {},
-      "geometry": {
-        "coordinates": [
-          [
-            [
-              -60.11363029935569,
-              -2.904625022183211
-            ],
-            [
-              -60.11363029935569,
-              -3.162613728707967
-            ],
-            [
-              -59.820894493858034,
-              -3.162613728707967
-            ],
-            [
-              -59.820894493858034,
-              -2.904625022183211
-            ],
-            [
-              -60.11363029935569,
-              -2.904625022183211
-            ]
-          ]
-        ],
-        "type": "Polygon"
-      }
-    }
-  ]
-}
-```
+## Project Highlights
+
+- **Autonomous Navigation**: The robot can navigate complex environments without human intervention.
+- **Real-time Object Recognition**: Utilizes machine learning to identify and categorize objects in real-time.
+- **Custom-built Robotic Arm**: A specially designed arm allows for precise manipulation of objects.
+- **Integration with IoT Devices**: Seamlessly connects with various IoT devices for enhanced functionality.
+
+For more information, check out the project documentation.
