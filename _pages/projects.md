@@ -11,10 +11,10 @@ title: projects
   <h2 class="projects-subtitle">A growing collection of cool projects</h2>
 
   {% assign projects = site.posts | where: "category", "project" %}
-  {% for project in projects %}
-  <!-- Debug: Output the title of each project -->
+  <!--{% for project in projects %}
+   Debug: Output the title of each project 
   {{ project.title }}
-  {% endfor %}
+  {% endfor %} -->
   <div class="projects-grid">
     {% for project in projects %}
       <div class="project-box">
