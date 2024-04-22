@@ -18,8 +18,17 @@ title: projects
   <div class="projects-grid">
     {% for project in projects %}
       <div class="project-box">
+      {% if project.redirect contains '://' %}
+          <h3> 
+          <a class="project-title" href="{{ project.redirect }}" target="_blank">{{ post.title }}</a>
+          <svg width="2rem" height="2rem" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+            <path d="M17 13.5v6H5v-12h6m3-3h6v6m0-6-9 9" class="icon_svg-stroke" stroke="#999" stroke-width="1.5" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round"></path>
+          </svg>
+          </h3>
+      {% else %}
         <h3 class="project-title">{{ project.title }}</h3>
-        {% if project.image %}
+      {% endif %}
+      {% if project.image %}
           <img class="project-image" src="{{ project.image | relative_url }}" alt="{{ project.title }}" style="max-width: 90%; height: auto; margin: 0 auto;border-radius: 12px;">
         {% endif %}
         <ul class="project-details">
