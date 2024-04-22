@@ -35,12 +35,12 @@ title: projects
   }
   .projects-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: 1fr;
     gap: 20px;
   }
   .project-box {
     border: 1px solid #ccc;
-    padding: 10px;
+    padding: 20px;
     border-radius: 8px;
     background-color: #f9f9f9;
   }
@@ -49,7 +49,7 @@ title: projects
   }
   .project-details {
     list-style: none;
-    padding: 0;
+    padding: 20;
     text-align: center;
   }
   .project-details li {
