@@ -19,8 +19,8 @@ title: projects
     {% for project in projects %}
       <div class="project-box">
       {% if project.redirect contains '://' %}
-          <h3 
-          <a class="project-title" href="{{ project.redirect }}" target="_blank">{{ post.title }}</a>
+          <h3> 
+          <a class="project-title" href="{{ project.redirect }}" target="_blank">{{ project.title }}</a>
           </h3>
       {% else %}
         <h3 class="project-title">{{ project.title }}</h3>
