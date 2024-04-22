@@ -72,11 +72,11 @@ title: projects
     text-align: left;
     margin-top: 20px;
   }
-  .project-details a {
+  ul.project-details li a {
   color: inherit; /* This makes the link color the same as the surrounding text */
   text-decoration: none; /* This removes the underline from the link */
   }
-  .project-details a:hover {
+  ul.project-details li a:hover {
   color: #0096D6; /* This changes the link color on hover */
   text-decoration: underline; /* This adds an underline on hover */
   }
