@@ -1,8 +1,9 @@
 ---
 layout: post
 title: "Nominated Thesis"
-date: 2024-04-17
+date: 2022-04-17
 category: project
+image: /assets/img/ChinaFirst.jpg
 redirect: https://sjf.ch/china-first-chinas-entwicklung-zum-global-groessten-eisenbahnhersteller-und-reaktionen-der-westlichen-welt/
 details:
   - "•	School’s best high school thesis “China First! China’s Remarkable Progress Toward Becoming the Global Leader in Railway Manufacturing”"
