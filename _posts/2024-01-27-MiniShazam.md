@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Mini-Shazam"
-date: 2024-04-13
+date: 2024-04-06
 category: project
 redirect: https://gitlab.ethz.ch/ndickenmann/shazam
 details:

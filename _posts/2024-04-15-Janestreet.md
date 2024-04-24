@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "March 2024 Jane Street Puzzle solved"
-date: 2024-04-15
+date: 2024-04-04
 category: project
 image: /assets/img/hooks-10.png
 redirect: https://github.com/nicolasdickenmann/janestreetpuzzlemarch24

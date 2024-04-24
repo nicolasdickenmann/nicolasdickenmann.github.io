@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Bmazing Robotics Project 2"
-date: 2024-04-23
+date: 2024-04-01
 category: project
 image: /assets/img/9.jpg
 details:

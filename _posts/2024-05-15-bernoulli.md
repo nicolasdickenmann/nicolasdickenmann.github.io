@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "BERNOULLI student rocket"
-date: 2024-04-22
+date: 2024-04-05
 category: project
 image: /assets/img/Bernoulli.jpg
 redirect: https://aris-space.ch/our-projects/bernoulli-2023/

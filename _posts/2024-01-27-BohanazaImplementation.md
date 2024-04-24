@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Bohnanza Cardgame"
-date: 2024-04-13
+date: 2024-04-07
 category: project
 redirect: https://gitlab.ethz.ch/ndickenmann/mr.beans-bohnanza
 details:

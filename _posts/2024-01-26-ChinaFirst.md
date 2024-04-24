@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Nominated Thesis on the Chinese HSR system"
-date: 2022-04-17
+date: 2022-04-03
 category: project
 image: /assets/img/ChinaFirst.jpg
 redirect: https://sjf.ch/china-first-chinas-entwicklung-zum-global-groessten-eisenbahnhersteller-und-reaktionen-der-westlichen-welt/
