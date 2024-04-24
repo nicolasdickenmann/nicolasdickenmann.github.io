@@ -3,7 +3,7 @@ layout: post
 title: "Bohnanza Cardgame"
 date: 2024-04-07
 category: project
-image: /assets/img/Bohnanza_main.png
+image: /assets/img/Bohananza_main.png
 redirect: https://gitlab.ethz.ch/ndickenmann/mr.beans-bohnanza
 details:
   - "This is the first implementation for the  <a href='https://en.wikipedia.org/wiki/Bohnanza'>Bohnanza card game</a>."  
