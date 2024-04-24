@@ -55,10 +55,10 @@ title: projects
     gap: 20px;
   }
   .project-box {
-    border: 1px solid #AE75F9;
+    border: 1px solid #711A75;
     padding: 20px;
     border-radius: 12px;
-    background-color: #AE75F9;
+    background-color: #711A75;
   }
   .project-title {
     margin-bottom: 15px;
