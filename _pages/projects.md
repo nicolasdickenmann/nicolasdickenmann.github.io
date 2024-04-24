@@ -28,8 +28,8 @@ title: projects
       {% if project.image %}
           <img class="project-image" src="{{ project.image | relative_url }}" alt="{{ project.title }}" style="max-width: 90%; height: auto; margin: 5% auto;border-radius: 12px;">
       {% elsif project.video %}
-            <div class="project-video video-max-width">
-            {% include video.liquid path=project.video class="img-fluid rounded z-depth-1" autoplay=true loop=true max-width =90% %}
+            <div class="project-video">
+            {% include video.liquid path=project.video class="img-fluid rounded z-depth-1" autoplay=true loop=true %}
             </div>
         {% endif %}
         <ul class="project-details">
@@ -90,8 +90,4 @@ title: projects
   .project-details li {
     margin-bottom: 5px;
   }
-
-  .video-max-width {
-  max-width: 90%;
-}
 </style>
