@@ -63,6 +63,9 @@ title: projects
   .project-title {
     margin-bottom: 15px;
   }
+  .project-subtitle {
+    margin-bottom: 10px;
+  }
   .project-title  {
     color: inherit; /* This makes the link color the same as the surrounding text */
     text-decoration: none; /* This removes the underline from the link */
