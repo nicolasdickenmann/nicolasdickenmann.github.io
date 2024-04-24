@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "March 2024 Jane Street Puzzle solved"
+title: "March 2024 Jane Street Puzzle"
 date: 2024-04-04
 category: project
 image: /assets/img/hooks-10.png
