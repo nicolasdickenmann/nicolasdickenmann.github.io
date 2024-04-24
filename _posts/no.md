@@ -1,8 +1,8 @@
 ---
 layout: post
-title: "Amazing Robotics Project"
-date: 2024-04-02
-category: project
+title: "Bmazing Robotics Project 2"
+date: 2024-04-01
+category: no
 image: /assets/img/9.jpg
 details:
   - "Autonomous navigation"
