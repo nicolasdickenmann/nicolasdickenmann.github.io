@@ -22,5 +22,6 @@ social: true # includes social icons at the bottom of the page
 ## Hi! 
 
 
-I am Nicolas Dickenmann, a bachelor's student pursuing electrical & computer engineering at ETH Zurich. I am deeply passionate about novel technologies enabled by progress in computers and love to engineer great products. On this page you can find a showcase of projects I have worked on and a resume.<br>
-Thanks for visiting my page and don't hesitate to reach out to me!
+I’m Nicolas Dickenmann—a master’s student in Data Science at ETH Zurich with a bachelor’s degree in Electrical & Computer Engineering.  I am deeply passionate about the intersection of research and building scalable computing solutions to develop great products. Much of my previous work has focused on computer vision research and its real-world applications.
+
+On this page, you’ll find a showcase of my personal projects and my resume. Thank you for visiting—feel free to reach out to connect!
