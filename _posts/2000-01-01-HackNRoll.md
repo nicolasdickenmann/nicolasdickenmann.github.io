@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Hack&Roll 2025 - built a computer agent that helps non-tech-savvy people navigate their desktops"
-date: 2024-01-08
+date: 2000-01-08
 category: project
 image: /assets/img/hacknroll.jpg
 redirect: https://devpost.com/software/joe-s-nephew
