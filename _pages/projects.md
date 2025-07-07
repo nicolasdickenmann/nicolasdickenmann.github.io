@@ -26,7 +26,7 @@ title: projects
         <h3 class="project-title">{{ project.title }}</h3>
       {% endif %}
       {% if project.image %}
-          <img class="project-image" src="{{ project.image | relative_url }}" alt="{{ project.title }}" style="max-width: 90%; height: auto; margin: 5% auto;border-radius: 12px;">
+          <img class="project-image" src="{{ project.image | relative_url }}" alt="{{ project.title }}">
       {% elsif project.video %}
             <div class="project-video">
             {% include video.liquid path=project.video class="img-fluid rounded z-depth-1" autoplay=true loop=true %}
@@ -59,6 +59,10 @@ title: projects
     padding: 20px;
     border-radius: 12px;
     background-color: #711A75;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    box-sizing: border-box;
+    min-width: 0;
   }
   .project-title {
     margin-bottom: 15px;
@@ -78,6 +82,9 @@ title: projects
     list-style: none;
     text-align: left;
     margin-top: 20px;
+    padding-right: 20px;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
   }
   ul.project-details li a {
   color: inherit; /* This makes the link color the same as the surrounding text */
@@ -89,5 +96,23 @@ title: projects
   }
   .project-details li {
     margin-bottom: 5px;
+  }
+  .project-video {
+    max-width: 90%;
+    height: auto;
+    margin: 5% auto;
+    border-radius: 12px;
+  }
+  .project-video video {
+    max-width: 100%;
+    height: auto;
+    border-radius: 12px;
+  }
+  .project-image {
+    max-width: 90%;
+    height: auto;
+    margin: 5% auto;
+    border-radius: 12px;
+    display: block;
   }
 </style>
