@@ -7,8 +7,7 @@ title: projects
 
 <div class="projects-container" style="text-align: center;">
 
-  <h1 class="projects-title">Projects</h1>
-  <h4 class="projects-subtitle">A growing collection of cool projects</h4>
+  <h1 class="projects-title">Research, side projects and more</h1>
 
   {% assign projects = site.posts | where: "category", "project" %}
   <!--{% for project in projects %}
