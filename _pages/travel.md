@@ -148,7 +148,7 @@ permalink: /travel/
 const visitedCountries = [
   'Switzerland', 'Germany', 'France', 'Italy', 'Austria', 'Spain', 'Portugal',
   'England', 'Norway', 'Turkey', 'Albania', 'Liechtenstein', 'Vatican', 'Czech Republic',
-  'Hungary', 'Poland', 'Romania', 'Greece', 'Morocco', 'USA', 'Canada', 'Mexico',
+  'Hungary', 'Poland', 'Romania', 'Greece', 'Croatia', 'Morocco', 'USA', 'Canada', 'Mexico',
   'Argentina', 'Chile', 'China', 'Laos', 'Taiwan', 'Vietnam', 'Thailand',
   'Malaysia', 'Singapore', 'Indonesia', 'Denmark'
 ];
