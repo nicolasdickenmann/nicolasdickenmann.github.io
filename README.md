@@ -15,3 +15,6 @@ personal_website/
 ## Local Development
 
 Simply open `index.html` in your web browser to view the site locally.
+```
+xdg-open index.html
+```
