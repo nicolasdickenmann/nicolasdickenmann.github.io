@@ -42,20 +42,16 @@
             <div class="content-grid">
                 <div class="left-column">
                     <section class="writing-section">
-                        <h2>Writing</h2>
-                        <nav class="writing-links">
-                            <a href="">Thoughts (coming soon)</a>
-                        </nav>
+                        <h2><a class="js-toggle-link section-link" href="#thoughts">Thoughts</a></h2>
                     </section>
 
                     <section class="cv-section">
-                        <h2>CV</h2>
-                        <p><a href="assets/cv.pdf" class="cv-link">Download CV</a></p>
+                        <h2><a href="assets/cv.pdf" class="section-link">CV</a></h2>
                     </section>
                 </div>
 
                 <div class="right-column">
-                    <section class="projects-section">
+                    <section class="projects-section js-section" id="projects" style="display: block;">
                         <h2>Projects</h2>
 
                         <article class="project">
@@ -65,7 +61,7 @@
 
                         <article class="project">
                             <h3><a href="https://working-peach.vercel.app/">A visual graph to find all people relevant to your research</a></h3>
-                            <p>A tool to semantically search for researchers and find knowledge clusters based on co-authorship. Built in 24 hours for the Berkeley AI Hackathon.  </p>
+                            <p>A tool to semantically search for researchers and find knowledge clusters based on co-authorship. Built in 24 hours for the Berkeley AI Hackathon.</p>
                         </article>
 
                         <article class="project">
@@ -100,13 +96,21 @@
 
                         <article class="project">
                             <h3><a href="https://gitlab.ethz.ch/ndickenmann/shazam">Music recognition on a low power microcontroller</a></h3>
-                            <p>My first real ML project. Trained a lightweight neural network, converted it to embedded C, and deployed it on an STM32 microcontroller for real-time song classification (~90% accuracy) using only a microphone and FFT-based features.
-                             </p>
+                            <p>My first real ML project. Trained a lightweight neural network, converted it to embedded C, and deployed it on an STM32 microcontroller for real-time song classification (~90% accuracy) using only a microphone and FFT-based features.</p>
                         </article>
 
                         <article class="project">
                             <h3><a href="https://inspiration.sjf.ch/china-first-chinas-entwicklung-zum-global-groessten-eisenbahnhersteller-und-reaktionen-der-westlichen-welt/">Thesis on tech catch-up and leapfrogging of the Chinese HSR</a></h3>
-                            <p>In my final year of high school, I became obsessed with understanding how China went from importing technology to dominating high-speed rail. Spent months diving into their strategy—tech transfer, absorption, leapfrogging. The thesis won <a href="https://maturitaetsarbeiten.ch/cms/archiv/a-z-namen-2021.html?view=article&id=113:dickenmann-nicolas&catid=10">provincial</a> and <a href="https://inspiration.sjf.ch/china-first-chinas-entwicklung-zum-global-groessten-eisenbahnhersteller-und-reaktionen-der-westlichen-welt/">national</a> awards.</p>
+                            <p>In my final year of high school, I became obsessed with understanding how China went from importing technology to dominating high-speed rail. Spent months diving into their strategy - tech transfer, absorption, leapfrogging. The thesis won <a href="https://maturitaetsarbeiten.ch/cms/archiv/a-z-namen-2021.html?view=article&id=113:dickenmann-nicolas&catid=10">provincial</a> and <a href="https://inspiration.sjf.ch/china-first-chinas-entwicklung-zum-global-groessten-eisenbahnhersteller-und-reaktionen-der-westlichen-welt/">national</a> awards.</p>
+                        </article>
+                    </section>
+
+                    <section class="projects-section js-section" id="thoughts" style="display: none;">
+                        <h2>Thoughts</h2>
+
+                        <article class="project">
+                            <h3><a href="blog/post1.html">How Nvidia Segments the Market by Throttling FP64 Performance on Consumer GPUs (and How to Work Around It)</a></h3>
+                            <p>High-performance computing has long relied on double precision. A look at how Nvidia's FP64 strategy evolved and how FP64 emulation can close the gap for consumer cards.</p>
                         </article>
                     </section>
                 </div>
@@ -117,5 +121,43 @@
             <p>&copy; 2025 Nicolas Dickenmann. All rights reserved.</p>
         </footer>
     </div>
+    <script>
+        (function () {
+            const sections = Array.from(document.querySelectorAll(".js-section"));
+            const toggleLink = document.querySelector(".js-toggle-link");
+            const updateToggle = (id) => {
+                if (!toggleLink) {
+                    return;
+                }
+
+                const isThoughts = id === "thoughts";
+                toggleLink.textContent = isThoughts ? "Projects" : "Thoughts";
+                toggleLink.setAttribute("href", isThoughts ? "#projects" : "#thoughts");
+            };
+
+            const setActive = (id) => {
+                sections.forEach((section) => {
+                    const isActive = section.id === id;
+                    section.classList.toggle("is-active", isActive);
+                    section.style.display = isActive ? "block" : "none";
+                });
+                updateToggle(id);
+            };
+
+            const showFromHash = () => {
+                const hash = window.location.hash || "#projects";
+                const id = hash.replace("#", "");
+                const target = document.getElementById(id);
+                if (target && target.classList.contains("js-section")) {
+                    setActive(id);
+                } else {
+                    setActive("projects");
+                }
+            };
+
+            window.addEventListener("hashchange", showFromHash);
+            showFromHash();
+        })();
+    </script>
 </body>
 </html>

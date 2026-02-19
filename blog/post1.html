@@ -3,54 +3,102 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>First Blog Post Title - Your Name</title>
+    <title>How Nvidia Segments the Market by Throttling FP64 Performance - Nicolas Dickenmann</title>
     <link rel="stylesheet" href="../css/style.css">
 </head>
-<body>
+<body class="blog-page">
     <div class="container">
         <header>
-            <h1><a href="../index.html">Your Name</a></h1>
+            <h1><a href="../index.html">Nicolas Dickenmann</a></h1>
         </header>
 
         <main>
-            <a href="index.html" class="back-link">← Back to blog</a>
+            <a href="../index.html#thoughts" class="back-link">Back to blog</a>
 
             <article class="blog-post">
-                <h1>First Blog Post Title</h1>
-                <time datetime="2024-01-15">January 15, 2024</time>
+                <h1>The Great FP64 Divide: How NVIDIA Segmented Compute (and How AI Is Undoing It)</h1>
+                <time datetime="2026-02-17">February 18, 2026</time>
 
                 <div class="blog-post-content">
-                    <p>This is a sample blog post. Replace this content with your actual blog post content.</p>
+                    <p>Buy an RTX 5090, the fastest consumer GPU money can buy, and you get 104.8 TFLOPS of FP32 compute. Ask it to do double-precision math and you get 1.64 TFLOPS. That 64:1 gap is not a technology limitation. For fifteen years, the FP64:FP32 ratio has been slowly getting wider on consumer GPUs, widening the divide between consumer and enterprise silicon. Now the AI boom is quietly dismantling that logic.</p>
 
-                    <h2>Section Heading</h2>
-                    <p>You can organize your content with headings, paragraphs, lists, and more. The styling is clean and minimal, focusing on readability.</p>
+                    <h2>The Evolution of FP64 on Nvidia GPUs</h2>
 
-                    <h3>Subsection</h3>
-                    <p>Here's some more content in a subsection. You can write about your research, share insights, or discuss technical topics.</p>
+                    <p>The FP64:FP32 ratio on Nvidia consumer GPUs has degraded consistently since the Fermi architecture debuted in 2010. On Fermi, the GF100 die shipped to both GeForce and Tesla lines; the hardware supported 1:2 FP64:FP32, but GeForce cards were driver-capped to 1:8.<sup><a href="#fn1" id="fnref1">1</a></sup></p>
 
-                    <ul>
-                        <li>Point one about something interesting</li>
-                        <li>Another important point</li>
-                        <li>A third consideration</li>
-                    </ul>
+                    <p>Over time, Nvidia moved away from “artificially” lowering FP64 performance on consumer GPUs. Instead, the architectural split became structural; the hardware itself is fundamentally different across product tiers. While datacenter GPUs have consistently kept a 1:2 or 1:3 FP64:FP32 performance (until the recent AI boom, more on that later), the performance ratio on consumer GPUs has consistently gotten worse. From 1:8 on the Fermi architecture in 2010 to 1:24 on Kepler in 2012 to 1:32 in 2014 to our final 1:64 ratio on Ampere in 2020.</p>
 
-                    <h2>Code Examples</h2>
-                    <p>You can also include code snippets if needed:</p>
+                    <p>This effectively also means that over 15 years, from the GTX 480 in 2010 to the RTX 5090 in 2025 the FP64 performance on consumer GPUs only increased 9.65x from 0.17 TFLOPS to 1.64 TFLOPS, while in the same time range the FP32 performance improved a whopping 77.63x from 1.35 TFLOP to 104.8 TFLOP.</p>
 
-                    <pre><code>function example() {
-    console.log("Hello, world!");
-}</code></pre>
+                    <figure>
+                        <img src="../assets/FP32toFP64.png" alt="FP32 versus FP64 throughput scaling on Nvidia consumer GPUs over time" style="width: 100%; height: auto; border-radius: 6px;">
+                        <figcaption>FP32 vs FP64 throughput scaling across consumer Nvidia GPU generations.<sup><a href="#fn2" id="fnref2-1">2</a></sup></figcaption>
+                    </figure>
 
-                    <p>Or inline code like <code>const variable = "value";</code> within your paragraphs.</p>
 
-                    <h2>Conclusion</h2>
-                    <p>Wrap up your thoughts here and maybe link to related posts or resources.</p>
+                    <h2>Nvidia's Move to Segment the Market</h2>
+                    <p>So why has FP64 performance on consumer GPUs progressively gotten weaker (in relation to FP32) while it stayed consistently strong on enterprise hardware?</p>
+
+                    <p>If this were purely a technical or cost constraint, you would expect the gap to be smaller. But since historically, Nvidia has taken deliberate steps to limit double-precision (FP64) throughput on GeForce cards, it makes it hard to argue this is accidental. The much simpler explanation is market segmentation.</p>
+
+                    <p>Most consumer workloads, such as gaming, 3d rendering, or video editing do not need FP64. High-performance computing on the other hand has long relied on double precision (FP64). Fields such as computational fluid dynamics, climate modeling, quantitative finance, and computational chemistry depend on numerical stability and precision that single precision (FP32) cannot always provide. So FP64 becomes a very convenient lever: weaken it on consumer GPUs, preserve it on enterprise versions, and you get a clean dividing line between markets. Nvidia has been fairly open about this. In the consumer Ampere GA102 whitepaper, they note "The small number of FP64 hardware units are included to ensure any programs with FP64 code operate correctly.".<sup><a href="#fn3" id="fnref3">3</a></sup></p>
+
+                    <p>And the segmentation worked. Over time, the price gap between consumer GPUs and datacenter GPUs widened from roughly 5x around 2010 to over 20x by 2022. Enterprise cards commanded massive premiums, justified in part by their strong FP64 performance (among other features like ECC memory, NVLink, support contracts, and so on). From a business standpoint, the elegance is obvious: closely related silicon sold into two markets at vastly different margins, with FP64 throughput serving as a clear dividing line.</p>
+
+                    <p>Modern AI training largely does not depend on FP64 though. FP32 works fine, and on the contrary lower precisions (FP16, BF16, FP8, even FP4) are often preferred. Suddenly, consumer GPUs looked surprisingly capable for serious compute workloads. Researchers, startups, and hobbyists could train meaningful models without the purchase of an expensive Tesla or A100. In response, Nvidia updated its GeForce End User License Agreement (EULA) in 2017 to prohibit use of consumer GPUs in datacenters, in a divisive move. In an (as far as I know) unprecedented move, implicit technical segmentation was replaced by explicit contractual segmentation.<sup><a href="#fn5" id="fnref5">5</a></sup></p>
+
+
+                    <figure>
+                        <img src="../assets/enterprise_consumer_price_ratio.png" alt="Enterprise vs consumer GPU price ratio over time" style="width: 100%; height: auto; border-radius: 6px;">
+                        <figcaption>Enterprise vs consumer GPU price ratio (2010-2022). Official MSPR numbers for consumer GPU, best effort for enterprise GPUs.<sup><a href="#fn2" id="fnref2-2">2</a></sup></figcaption>
+                    </figure>
+
+                    <h2>How FP64 Emulation and AI Is Changing the Game</h2>
+                    <p>What if you have an old RTX 4090 lying around at home and, for some reason, you need the precision of FP64 but the built-in FP64 capabilities are not sufficient? Aside from the obvious answer of purchasing enterprise GPU power, FP64 emulation using FP32 floats can be an answer. This concept dates back to 1971, when T. J. Dekker described double-float arithmetic.<sup><a href="#fn6" id="fnref6">6</a></sup></p>
+
+                    <p>The simple idea is to split a 64-bit floating point number into two 32-bit floating point numbers: <code>A = a_hi + a_lo</code>. The <code>a_hi</code> term carries the most significant bits, while <code>a_lo</code> captures the rounding error. Andrew Thall proposed a bunch of common algorithms for emulated FP64s (summation, multiplication, etc.) back in 2007 when GPUs did not have FP64 capabilities.<sup><a href="#fn7" id="fnref7">7</a></sup> You lose 5 bits of precision as your effective mantissa is only 48 bits (twice the FP32 effective mantissa) and not the FP64 53 bits of precision. If a modest reduction in numerical precision is acceptable, you may be able to achieve substantially higher throughput by using emulated double-precision computation. This can be advantageous given the steep FP64-to-FP32 performance disparity, even after accounting for the overhead introduced by emulation.</p>
+                    <figure>
+                        <img src="../assets/emulate_double.drawio.png" alt="Diagram of emulated double using high and low parts" style="width: 100%; height: auto; border-radius: 6px;">
+                        <figcaption>Emulated double representation using high and low FP32 parts.</figcaption>
+                    </figure>
+
+                    <p>A newer scheme that preserves full 64-bit precision but only works for matrix multiplication is the Ozaki scheme.<sup><a href="#fn8" id="fnref8">8</a></sup> This scheme exploits the speedup of tensor cores (specialized hardware for matrix multiply-accumulate (MMA) operations) and the distributive property of matrix multiplication.<sup><a href="#fn9" id="fnref9">9</a></sup> The Ozaki scheme splits FP64 numbers into, for example, FP8 numbers:</p>
+                    <p>A = A<sub>1</sub> + A<sub>2</sub> + A<sub>3</sub> + ... + A<sub>k</sub></p>
+                    <p>where A<sub>1</sub> contains the most significant bits and A<sub>2</sub> contains the next slice of bits and so on. We then calculate:</p>
+                    <p>A<sub>i</sub> B<sub>i</sub></p>
+                    <p>for each A<sub>i</sub> and B<sub>i</sub>. All the results are summed back up in 64-bit precision:</p>
+                    <p>AB = Σ A<sub>i</sub> B<sub>i</sub></p>
+                    <p>The Ozaki scheme is gaining increasing traction thanks to the abundance of extremely fast FP8 and FP4 tensor cores being deployed for AI workloads. NVIDIA added support for the Ozaki scheme in cuBLAS in October 2025 and plans to continue developing it.<sup><a href="#fn10" id="fnref10">10</a></sup></p>
+
+                    <p>From NVIDIA's perspective, this direction is logical. The majority of enterprise GPU revenue now comes from AI applications, market segmentation based on FP64 performance makes no more sense. Enhancing FP64 emulation through low-precision tensor cores allows a reduction in the relative allocation of dedicated FP64 units in enterprise GPUs while expanding FP8 and FP4 compute resources that directly benefit AI workloads.</p>
+
+                    <p>The latest generation of NVIDIA enterprise GPUs, the B300 based on the Blackwell Ultra architecture, represents a decisive shift toward low precision. FP64 performance has been significantly reduced in favor of FP8 and FP4 throughput, with the FP64:FP32 ratio dropping from 1:2 to 1:64. In absolute terms, peak FP64 performance declines from 37 TFLOPS on the B200 to 1.2 TFLOPS on the B300. Paradoxically, instead of consumer hardware catching up to enterprise-class capabilities, enterprise hardware is now embracing constraints traditionally associated with consumer GPUs.</p>
+
+                    <p>Does this signal a gradual replacement of physical FP64 units through emulation? Not necessarily. According to NVIDIA, the company is not abandoning 64-bit computing and plans future improvements to FP64 capabilities.<sup><a href="#fn11" id="fnref11">11</a></sup> Nonetheless, FP64 emulation is here to stay, exploiting the abundance of low-precision tensor cores to supplement hardware FP64 for HPC workloads.</p>
+
+                    <p>But the segmentation logic hasn't disappeared — it may simply be migrating. The RTX 5090 delivers a 1:1 FP16:FP32 ratio, while the B200 sits at 16:1. For fifteen years, FP64 was the dividing line between consumer and enterprise silicon. The next divide may already be taking shape in low-precision floating point.</p>
+                    <section class="footnotes" aria-label="Footnotes">
+                        <hr>
+                        <ol>
+                            <li id="fn1">AnandTech: GTX 480/470 FP64 ratio discussion (archived). <a href="https://web.archive.org/web/20100402215300/http://www.anandtech.com/show/2977/nvidia-s-geforce-gtx-480-and-gtx-470-6-months-late-was-it-worth-the-wait-/6">https://web.archive.org/web/20100402215300/http://www.anandtech.com/show/2977/nvidia-s-geforce-gtx-480-and-gtx-470-6-months-late-was-it-worth-the-wait-/6</a> <a href="#fnref1" aria-label="Back to content">↩</a></li>
+                            <li id="fn2">Google Sheets: numbers used for the computations. <a href="https://docs.google.com/spreadsheets/d/1NHHlgVytLx43DGzP8HlPeOCs7HKPElgpSO__9j6oMFo/edit?usp=sharing">https://docs.google.com/spreadsheets/d/1NHHlgVytLx43DGzP8HlPeOCs7HKPElgpSO__9j6oMFo/edit?usp=sharing</a> <a href="#fnref2-1" aria-label="Back to first graph">↩</a> <a href="#fnref2-2" aria-label="Back to second graph">↩</a></li>
+                            <li id="fn3">NVIDIA Ampere GA102 GPU Architecture Whitepaper (PDF). <a href="https://www.nvidia.com/content/PDF/nvidia-ampere-ga-102-gpu-architecture-whitepaper-v2.pdf">https://www.nvidia.com/content/PDF/nvidia-ampere-ga-102-gpu-architecture-whitepaper-v2.pdf</a> <a href="#fnref3" aria-label="Back to content">↩</a></li>
+                            <li id="fn4">Alibaba Product Insights: A100 vs RTX 3090—Is the A100 Really Worth the Hype and Extra for Deep Learning? <a href="https://www.alibaba.com/product-insights/a100-vs-rtx-3090-is-the-a100-really-worth-the-hype-and-extra-for-deep-learning.html">https://www.alibaba.com/product-insights/a100-vs-rtx-3090-is-the-a100-really-worth-the-hype-and-extra-for-deep-learning.html</a> <a href="#fnref4" aria-label="Back to content">↩</a></li>
+                            <li id="fn5">Wccftech on 2017 GeForce EULA datacenter restriction. <a href="https://wccftech.com/nvidia-geforce-eula-prohibits-datacenter-blockchain-allowed/">https://wccftech.com/nvidia-geforce-eula-prohibits-datacenter-blockchain-allowed/</a> <a href="#fnref5" aria-label="Back to content">↩</a></li>
+                            <li id="fn6">T. J. Dekker (1971), double-float arithmetic. <a href="https://csclub.uwaterloo.ca/~pbarfuss/dekker1971.pdf">https://csclub.uwaterloo.ca/~pbarfuss/dekker1971.pdf</a> <a href="#fnref6" aria-label="Back to content">↩</a></li>
+                            <li id="fn7">Andrew Thall (2007), Extended-Precision Floating-Point Numbers for GPU Computation. <a href="https://andrewthall.org/papers/df64_qf128.pdf">https://andrewthall.org/papers/df64_qf128.pdf</a> <a href="#fnref7" aria-label="Back to content">↩</a></li>
+                            <li id="fn8">Ozaki et al. (2011), Error-Free Transformations for Matrix Multiplication. <a href="https://link.springer.com/article/10.1007/s11075-011-9478-1">https://link.springer.com/article/10.1007/s11075-011-9478-1</a> <a href="#fnref8" aria-label="Back to content">↩</a></li>
+                            <li id="fn9">NVIDIA blog: Tensor Cores for Science (ISC 2025). <a href="https://developer.nvidia.com/blog/nvidia-top500-supercomputers-isc-2025/#tensor_cores_for_science%C2%A0">https://developer.nvidia.com/blog/nvidia-top500-supercomputers-isc-2025/#tensor_cores_for_science%C2%A0</a> <a href="#fnref9" aria-label="Back to content">↩</a></li>
+                            <li id="fn10">NVIDIA blog: Unlocking Tensor Core Performance with Floating-Point Emulation in cuBLAS. <a href="https://developer.nvidia.com/blog/unlocking-tensor-core-performance-with-floating-point-emulation-in-cublas">https://developer.nvidia.com/blog/unlocking-tensor-core-performance-with-floating-point-emulation-in-cublas</a> <a href="#fnref10" aria-label="Back to content">↩</a></li>
+                            <li id="fn11">HPCwire: NVIDIA says it's not abandoning 64-bit computing (Dec 9, 2025). <a href="https://www.hpcwire.com/2025/12/09/nvidia-says-its-not-abandoning-64-bit-computing/">https://www.hpcwire.com/2025/12/09/nvidia-says-its-not-abandoning-64-bit-computing/</a> <a href="#fnref11" aria-label="Back to content">↩</a></li>
+                        </ol>
+                    </section>
                 </div>
             </article>
         </main>
 
         <footer>
-            <p>&copy; 2024 Your Name. All rights reserved.</p>
+            <p>&copy; 2026 Nicolas Dickenmann. All rights reserved.</p>
         </footer>
     </div>
 </body>
