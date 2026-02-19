@@ -5,7 +5,7 @@ personal_website/
  index.html          # Home page with bio, writing links, and projects
  blog/
     index.html      # Blog listing page
-    post1.html      # Sample blog post (template)
+    the-great-fp64-divide.html      # Blog post
  css/
     style.css       # All styling
  assets/
