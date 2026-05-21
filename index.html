@@ -14,8 +14,8 @@
                 <img src="assets/profile.jpg" alt="Nicolas Dickenmann" class="profile-image">
                 <div class="header-content">
                     <p class="tagline">I am currently a master's student @ ETH Zurich and  will be spending the spring and summer @ Stanford as a visiting student researcher.<br><br>
-                        I am interested in 3d vision, self-supervised learning and solving scalability for vision. I believe vision is the most important frontier with <a href="https://www.ericsson.com/en/reports-and-papers/mobility-report/articles/streaming-video">70% of internet traffic being video</a> and <a href="https://news.mit.edu/1996/visualprocessing">more than half of the human brain</a> being devoted to vision processing.<br><br>
-                        Previously I completed my bachelors at ETH Zurich in electrical engineering, studied at NUS in Singapore and worked as a computer vision engineer at <a href="https://polybee.co/">Polybee</a>.
+                        I am interested in vision for robotics, generative modeling and scalability. I believe vision is the most important frontier with <a href="https://www.ericsson.com/en/reports-and-papers/mobility-report/articles/streaming-video">70% of internet traffic being video</a> and <a href="https://news.mit.edu/1996/visualprocessing">more than half of the human brain</a> being devoted to vision processing.<br><br>
+                        Previously I completed my bachelors at ETH Zurich in electrical engineering, studied at NUS in Singapore and interned as a computer vision researcher at <a href="https://polybee.co/">Polybee</a>.
                     </p>
                 </div>
             </div>
@@ -55,48 +55,55 @@
                         <h2>Projects</h2>
 
                         <article class="project">
-                            <h3><a href="https://github.com/nicolasdickenmann/DreamWorld">Creating worlds out of thoughts.</a></h3>
-                            <p>Weekend experiment: can you generate virtual worlds directly from brain signals? Combined Nvidia Cosmos with DreamDiffusion to turn EEG readings into explorable environments.</p>
+                            <h3><a href="https://dl.acm.org/doi/10.1145/3772363.3798916">My first paper: Steering Generative Models for Accessibility</a></h3>
+                            <p>Fine-tuned Stable Diffusion on a custom corpus of "EasyRead data", pictograms that simplify texts for people with disabilities, and trained with specific user controllability in mind. Published at CHI 2026: <a href="https://dl.acm.org/doi/10.1145/3772363.3798916">https://dl.acm.org/doi/10.1145/3772363.3798916</a></p>
                         </article>
 
                         <article class="project">
-                            <h3><a href="https://working-peach.vercel.app/">A visual graph to find all people relevant to your research</a></h3>
-                            <p>A tool to semantically search for researchers and find knowledge clusters based on co-authorship. Built in 24 hours for the Berkeley AI Hackathon.</p>
+                            <h3>Representing information in latent space and retrieving nearest neighbors: a couple of projects</h3>
+                            <p>I built a <a href="https://working-peach.vercel.app/">tool</a> to semantically search for researchers and cluster knowledge for the Berkley AI Hackathon (2025). Earlier I developed a demo of how a <a href="https://ngt-frontend-five.vercel.app/">marketplace</a> in the future could look like using dense retrieval. Most recently I helped build <a href="https://www.searchtheregistry.com/">the Stanford Registy</a> embedding 10k out of 18k undergrad and grad students in over 100k vectors.</p>
                         </article>
 
                         <article class="project">
-                            <h3><a href="https://ngt-frontend-five.vercel.app/">Tech demo envisioning a new marketplace using vector search</a></h3>
-                            <p>A demo to explore how vector search could change marketplaces. Enables semantic product discovery, allowing users to search by concept rather than keywords.</p>
+                            <h3><a href="https://nicolasdickenmann.com/blog/the-great-fp64-divide.html">Emulating FP64 performance using FP32</a></h3>
+                            <p>I came up with an emulated-double arithmetic solution (inspired by <a href="https://andrewthall.org/papers/df64_qf128.pdf">this 2006 paper</a>) using paired single-precision (FP32) values to bypass the 64:1
+                                FP32-to-FP64 performance penalty on consumer GPU architectures. The emulated doubles achieved 48 bits of effective precision and delivered
+                                a 3.8x speedup over native double-precision (tested on binomial option pricing). I wrote <a href="https://nicolasdickenmann.com/blog/the-great-fp64-divide.html">a blog post</a> about this that got quite <a href="https://news.ycombinator.com/item?id=47068890">a bit of attention on hackernews</a>.</p>
                         </article>
 
                         <article class="project">
-                            <h3><a href="https://devpost.com/software/joe-s-nephew">Computer agent that helps non-tech-savvy people navigate their desktops</a></h3>
-                            <p>Built at the dawn of the computer agent era in 24 hours and won Singapore's largest hackathon.</p>
+                            <h3><a href="https://github.com/nicolasdickenmann/DreamWorld">Creating worlds out of thoughts: a weekend curiosity experiment</a></h3>
+                            <p>Could we generate virtual worlds directly from brain signals? I was able to affirmatively answer this question by combining Nvidia Cosmos with DreamDiffusion to turn EEG readings into explorable environments.</p>
+                        </article>
+
+                        <article class="project">
+                            <h3><a href="https://devpost.com/software/joe-s-nephew">My first hackathon win: Computer agent that helps non-tech-savvy people navigate their desktops</a></h3>
+                            <p>Built at the dawn of the computer agent era in 24 hours and won Singapore's largest hackathon, Hack&Roll in 2025.</p>
                         </article>
 
                         <article class="project">
                             <h3><a href="">A Reinforcement Learning Approach to Generate Network Topologies</a></h3>
-                            <p>A novel architecture utilizing Monte Carlo Tree Search to generate interconnect topologies of diameter-3. This project, my bachelor's thesis, taught me first principles thinking and scalable engineering. The research on this project continues at the lab but <a href="https://arxiv.org/pdf/2501.11223">this published paper</a> uses my work.</p>
+                            <p>A novel architecture utilizing Monte Carlo Tree Search to generate interconnect topologies of diameter-3. This project, my bachelor's thesis, taught me RL and scalable engineering. The research on this project continues at the lab but <a href="https://arxiv.org/pdf/2501.11223">this published paper</a> uses my work.</p>
                         </article>
 
                         <article class="project">
-                            <h3><a href="https://gitlab.ethz.ch/vschuhmacher/superresolution">Superresolution on MRI scans</a></h3>
+                            <h3><a href="https://gitlab.ethz.ch/vschuhmacher/superresolution">Rigorous ML experimentation: Superresolution on MRI scans</a></h3>
                             <p>This project taught me systematic ML experimentation: proper benchmarking, rigorous ablation testing, and drawing conclusive insights. Trained and evaluated a superresolution model based on <a href="https://yinboc.github.io/liif/">this work</a> on MRI images.</p>
                         </article>
 
                         <article class="project">
                             <h3><a href="https://github.com/nicolasdickenmann/janestreetpuzzlemarch24">Jane street March 2024 puzzle</a></h3>
-                            <p>Once I started, there was no turning back. Spent 36 straight hours solving it.</p>
+                            <p>Backtracking, backtracking, backtracking! Got a bit obsessed with this puzzle and spent roughly 36 consecutive hours solving it.</p>
                         </article>
 
                         <article class="project">
-                            <h3><a href="https://aris-space.ch/our-projects/bernoulli-2023/">BERNOULLI Student Rocket</a></h3>
-                            <p>I worked on the avionics stack of the 2023 BERNOULLI hybrid rocket. Launched at EUROC from a Portuguese army tank training ground.</p>
+                            <h3><a href="https://aris-space.ch/our-projects/bernoulli-2023/">Launching a rocket</a></h3>
+                            <p>I worked on the avionics stack of the 2023 ETH rocket team (ARIS). Launched our hybrid rocket at EUROC from a Portuguese army tank testing ground.</p>
                         </article>
 
                         <article class="project">
-                            <h3><a href="https://gitlab.ethz.ch/ndickenmann/shazam">Music recognition on a low power microcontroller</a></h3>
-                            <p>My first real ML project. Trained a lightweight neural network, converted it to embedded C, and deployed it on an STM32 microcontroller for real-time song classification (~90% accuracy) using only a microphone and FFT-based features.</p>
+                            <h3><a href="https://gitlab.ethz.ch/ndickenmann/shazam">My first ML project: Music recognition on a low power microcontroller</a></h3>
+                            <p>Trained a lightweight neural network, converted it to embedded C, and deployed it on an STM32 microcontroller for real-time song classification (~90% accuracy) using only a microphone and FFT-based features.</p>
                         </article>
 
                         <article class="project">
